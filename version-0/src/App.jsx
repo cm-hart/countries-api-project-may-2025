@@ -18,9 +18,9 @@ function App() {
             <li>
               <Link to="/saved-countries">SavedCountries</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/country-detail">CountryDetail</Link>
-            </li>
+            </li> */}
           </div>
         </ul>
       </nav>
