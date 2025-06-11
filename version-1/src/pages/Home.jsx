@@ -1,11 +1,15 @@
-import localData from "../../localData.js";
 
-function Home() {
-  console.log(localData[0], "localData");
+function Home({data}) {
+  console.log("data", data)
+
+  //  if (!Array.isArray(data)) {
+  //   return <p>Loading countries...</p>; // or a spinner
+  // }
+ 
   return (
     <div className="home-wrapper">
       <div className="cards-wrapper">
-        {localData.map((item, key) => {
+        {data.map((item, key) => {
           return (
             <div key={key} className="country-card">
               <img src={item.flags.png} alt={`The flag of ${item.name.common}`}/>
