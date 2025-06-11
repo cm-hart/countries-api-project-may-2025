@@ -1,26 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 body {
   background-color: #fafafa;
 }
+/* nav {
+  padding-right: 2rem;
+  padding-left: 2rem;
+} */
+
+nav {
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1rem 2rem;
+    top: -17px;
+    left: -55px;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+
+
 nav ul {
   display: flex;
   justify-content: space-between;
 }
-nav ul li{
+.nav-pages-links-wrapper {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-pages-links-wrapper li {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
   list-style-type: none;
 }
 
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
   /* font-weight: <weight>; */
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-    color: black;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+  color: black;
 }
 
 .nav-logo {
@@ -28,7 +55,7 @@ nav ul li a{
 }
 
 .cards-wrapper {
-  width: 80%;
+  width: 90%;
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -36,26 +63,54 @@ nav ul li a{
 }
 
 .country-card {
-  width: 264px;
+  width: 364px;
   /* height: 336px; */
   margin: 2rem;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
-.country-card img{
-  width: 264px;
-  height: 160px;
-  border-radius: 20px 20px 0 0;
+.country-card img {
+  width: 364px;
+  height: 260px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px lightgrey;
 }
 
 .card-text {
   margin: 2rem;
   margin-bottom: 3rem;
 }
-.card-text span{
+.card-text span {
   font-weight: bold;
 }
-.card-text p{
+.card-text p {
   margin: 10px;
+}
+.card-text h3 {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
+  /* Styles for small mobile screens go here */
+  .country-card {
+    margin: 2rem 0rem;
+  }
+  .nav-logo {
+    font-size: 15px;
+  }
+  nav {
+    /* padding: 0rem; */
+  }
+  nav ul {
+    padding: 0px;
+  }
+  nav {
+    /* box-shadow: 0 0px 8px rgba(0, 0, 0, 0.08); */
+    padding-bottom: 1rem;
+    width: 100%;
+    left: -32px;
+  }
 }
