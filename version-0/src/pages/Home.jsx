@@ -5,10 +5,10 @@ function Home() {
   return (
     <div className="home-wrapper">
       <div className="cards-wrapper">
-        {localData.map((item) => {
+        {localData.map((item, key) => {
           return (
-            <div className="country-card">
-              <img src={item.flags.png} />
+            <div key={key} className="country-card">
+              <img src={item.flags.png} alt={`The flag of ${item.name.common}`}/>
               <div className="card-text">
                 <h3>{item.name.common}</h3>
                 <p><span>Population:</span> {item.population}</p>
