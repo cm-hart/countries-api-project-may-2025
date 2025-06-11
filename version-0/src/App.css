@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li{
+  list-style-type: none;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+    color: black;
+}
+
+.nav-logo {
+  font-size: 24px;
+}
