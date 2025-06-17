@@ -60,7 +60,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home data={apiData}/>} />
         <Route path="/saved-countries" element={<SavedCountries />} />
-        <Route path="/country-detail" element={<CountryDetail />} />
+        <Route path="/country/:countryName" element={<CountryDetail countries={apiData}/>} />
       </Routes>
     </div>
   );

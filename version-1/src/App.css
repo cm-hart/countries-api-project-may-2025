@@ -2,23 +2,29 @@
 
 body {
   background-color: #fafafa;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+  color: black;
 }
+
 /* nav {
   padding-right: 2rem;
   padding-left: 2rem;
 } */
 
 nav {
-    width: 100%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 1rem 2rem;
-    top: -17px;
-    left: -55px;
-    background-color: white;
-    position: relative;
-    z-index: 10;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+  top: -17px;
+  left: -55px;
+  background-color: white;
+  position: relative;
+  z-index: 10;
 }
-
 
 nav ul {
   display: flex;
@@ -54,6 +60,39 @@ nav ul li a {
   font-size: 24px;
 }
 
+.region-dropdown {
+  padding: 0.75em 1em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.region-dropdown:focus {
+  outline: none;
+  border-color: #517aa1;
+}
+
+.region-filter-wrapper {
+  margin-bottom: 1em;
+  position: relative;
+  text-align: end;
+  margin-right: 7rem;
+}
+
+.search-filter-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.search-filter-wrapper form {
+  width: 300px;
+}
+
 .cards-wrapper {
   width: 90%;
   margin: 2rem auto;
@@ -70,7 +109,20 @@ nav ul li a {
   border-radius: 10px;
   font-family: "Nunito Sans", sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding-bottom: 1rem;
 }
+
+.country-card * {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .country-card img {
   width: 364px;
   height: 260px;
@@ -81,6 +133,7 @@ nav ul li a {
 .card-text {
   margin: 2rem;
   margin-bottom: 3rem;
+  text-decoration: none;
 }
 .card-text span {
   font-weight: bold;
@@ -114,7 +167,6 @@ nav ul li a {
     left: -32px;
   }
 }
-
 
 /* SAVED COUNTRIES PAGE */
 .form-container {
@@ -167,4 +219,43 @@ button {
 
 button:hover {
   background-color: #6b4fd0;
+}
+
+/* COUNTRY DETAILS PAGE */
+
+.country-detail-wrapper {
+  display: flex;
+  width: 63%;
+  margin: 5rem auto;
+}
+
+.country-detail-wrapper img {
+  width: 560px;
+  border-radius: 10px;
+}
+
+.country-detail-wrapper .text-content {
+  padding: 4rem;
+}
+
+.country-detail-wrapper button {
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
+}
+
+.details-image-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-image-btn-wrapper a {
+  width: 66px;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: black;
 }
