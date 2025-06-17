@@ -1,19 +1,23 @@
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-function CountryDetail({ countries }) {
+function CountryDetail({ countries, saveFunction, savedCountries }) {
+  //dynamic routes params
   const countryName = useParams().countryName;
-  console.log("countryName", countryName);
 
+  //matches the param from the route to the object in the array
   const country = countries.find(
-    (c) => c.name.common.toLowerCase() === countryName.toLowerCase()
+    (item) => item.name.common.toLowerCase() === countryName.toLowerCase()
   );
-
+  //checks to see if the country has been saved before
+  const isSaved = savedCountries?.some(
+  (item) => item.name.common === country.name.common
+);
+  
+  //error handling
   if (!country) {
     return <p>Country not found</p>;
   }
 
-  console.log("country", country);
   return (
     <div className="country-detail-wrapper">
       <div className="details-image-btn-wrapper">
@@ -22,7 +26,11 @@ function CountryDetail({ countries }) {
       </div>
       <div className="text-content">
         <h2>{country.name.common}</h2>
-        <button>Save</button>
+        {isSaved ? (
+          <button disabled>Saved</button>
+        ) : (
+          <button onClick={() => saveFunction(country)}>Save</button>
+        )}
         <p>Population: {country.population}</p>
         <p>Region: {country.region}</p>
       </div>

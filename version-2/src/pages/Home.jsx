@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import RegionFilter from "../components/RegionFilter.jsx";
+import CountryCard from "../components/CountryCard.jsx";
 
 function Home({ data }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -8,6 +8,8 @@ function Home({ data }) {
   const [formData, setFormData] = useState({
     countrySearched: "",
   });
+
+  
 
 
   function handleChange(e) {
@@ -53,35 +55,7 @@ function Home({ data }) {
         </form>
         <RegionFilter onFilterChange={(region) => setSelectedRegion(region)} />
       </div>
-
-      <div className="cards-wrapper">
-        {filteredData.map((item, key) => (
-          <Link
-            to={`/country/${item.name.common}`}
-            className="card-link"
-            key={key}
-          >
-            <div className="country-card">
-              <img
-                src={item.flags.png}
-                alt={`The flag of ${item.name.common}`}
-              />
-              <div className="card-text">
-                <h3>{item.name.common}</h3>
-                <p>
-                  <span>Population:</span> {item.population}
-                </p>
-                <p>
-                  <span>Region:</span> {item.region}
-                </p>
-                <p>
-                  <span>Capital:</span> {item.capital}
-                </p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <CountryCard filteredData={filteredData}/>
     </div>
   );
 }
